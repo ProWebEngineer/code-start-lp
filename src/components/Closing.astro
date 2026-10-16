@@ -1,0 +1,20 @@
+---
+import ConsultLink from './ConsultLink.astro';
+
+interface Props {
+  heading: string;
+  lead: string;
+  consultLabel: string;
+  faqId: string;
+}
+
+const { heading, lead, consultLabel, faqId } = Astro.props;
+---
+
+<section class="closing" aria-labelledby="closing-heading">
+  <div class="wrap closing-inner">
+    <h2 id="closing-heading">{heading}</h2>
+    <p class="lead">{lead}</p>
+    <ConsultLink label={consultLabel} href={`#${faqId}`} />
+  </div>
+</section>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  brand: string;
+  notice: string;
+}
+
+const { brand, notice } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer-brand">{brand}</p>
+    <p>{notice}</p>
+  </div>
+</footer>
