@@ -1,0 +1,21 @@
+---
+interface Props {
+  heading: string;
+  items: readonly string[];
+}
+
+const { heading, items } = Astro.props;
+---
+
+<section class="section" aria-labelledby="audience-heading">
+  <div class="wrap">
+    <h2 id="audience-heading">{heading}</h2>
+    <ul class="audience-list">
+      {
+        items.map((item) => (
+          <li>{item}</li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

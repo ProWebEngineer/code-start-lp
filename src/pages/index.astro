@@ -1,0 +1,36 @@
+---
+import Audience from '../components/Audience.astro';
+import Closing from '../components/Closing.astro';
+import Faq from '../components/Faq.astro';
+import Flow from '../components/Flow.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Learn from '../components/Learn.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { content } from '../data/content';
+---
+
+<BaseLayout title={content.title} description={content.description}>
+  <Header brand={content.brand} />
+  <main id="main">
+    <Hero
+      eyebrow={content.eyebrow}
+      catchcopy={content.catchcopy}
+      lead={content.lead}
+      consultLabel={content.consultLabel}
+      faqId={content.faqId}
+    />
+    <Audience heading={content.audience.heading} items={content.audience.items} />
+    <Learn heading={content.learn.heading} items={content.learn.items} />
+    <Flow heading={content.flow.heading} steps={content.flow.steps} />
+    <Faq id={content.faqId} heading={content.faq.heading} items={content.faq.items} />
+    <Closing
+      heading={content.closing.heading}
+      lead={content.closing.lead}
+      consultLabel={content.consultLabel}
+      faqId={content.faqId}
+    />
+  </main>
+  <Footer brand={content.brand} notice={content.footer.notice} />
+</BaseLayout>

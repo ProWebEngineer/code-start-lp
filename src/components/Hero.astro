@@ -1,0 +1,25 @@
+---
+import ConsultLink from './ConsultLink.astro';
+
+interface Props {
+  eyebrow: string;
+  catchcopy: readonly [string, string];
+  lead: string;
+  consultLabel: string;
+  faqId: string;
+}
+
+const { eyebrow, catchcopy, lead, consultLabel, faqId } = Astro.props;
+---
+
+<section class="hero" id="top" aria-labelledby="hero-heading">
+  <div class="wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1 id="hero-heading">
+      {catchcopy[0]}<br />
+      {catchcopy[1]}
+    </h1>
+    <p class="lead">{lead}</p>
+    <ConsultLink label={consultLabel} href={`#${faqId}`} />
+  </div>
+</section>
